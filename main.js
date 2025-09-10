@@ -1,8 +1,3 @@
-// main.js
-
-// Tambahkan class .slide-in pada elemen yang ingin dianimasikan di HTML Anda
-// Contoh: <section class="slide-in">...</section>
-
 document.addEventListener("DOMContentLoaded", function () {
     const slideEls = document.querySelectorAll('.slide-in');
   
@@ -10,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slideEls.forEach(el => {
         const rect = el.getBoundingClientRect();
         const isVisible = (
-          rect.top < window.innerHeight - 100 && // 100px sebelum masuk viewport penuh
+          rect.top < window.innerHeight - 100 && 
           rect.bottom > 100
         );
         if (isVisible) {
@@ -23,5 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
     window.addEventListener('scroll', checkSlide);
     window.addEventListener('resize', checkSlide);
-    checkSlide(); // jalankan saat load
+    checkSlide(); 
   });
+
