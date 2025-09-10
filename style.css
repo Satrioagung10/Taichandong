@@ -2,10 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 body {
+  /* Fade-in animasi seluruh body */
+  animation: fadeInBody 1.2s ease-in;
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: rgb(255, 255, 255);
+}
+
+/* Tambahkan di style.css */
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s cubic-bezier(.23,1.12,.89,.92), transform 0.7s cubic-bezier(.23,1.12,.89,.92);
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .navbar-nav a {
@@ -31,6 +47,8 @@ body {
 
 .navbar {
   background-color: rgb(16, 16, 16);
+  animation: slideDownNav 1s cubic-bezier(.23,1.12,.89,.92);
+
   border-bottom: solid rgb(70, 70, 70) 1px;
 }
 
@@ -68,6 +86,15 @@ body {
   color: white;
   background-color: rgb(220, 151, 0);
   padding: 7px 15px;
+  transition: background 0.2s, transform 0.2s;
+  animation: popUpBtn 0.9s cubic-bezier(.23,1.12,.89,.92);
+
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  font: 800;
+  color: white;
+  background-color: rgb(220, 151, 0);
+  padding: 7px 15px;
 }
 
 .btn-home button:hover {
@@ -79,9 +106,16 @@ body {
 
 .img-home {
   margin-right: 7rem;
+  animation: fadeInImgHome 1.4s;
+
+  margin-right: 7rem;
 }
 
 .menu-img {
+  width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInMenuImg 1.2s;
+
     width: 90%;
 }
 
@@ -110,7 +144,7 @@ body {
 }
 
 .logo-img {
-  width: 60%;
+  width: 80%;
 }
 
 .all-menu-line {
@@ -145,6 +179,32 @@ body {
   background-image: url("img/background.png");
 }
 
+/* Animasi Keyframes */
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDownNav {
+  from { transform: translateY(-80px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes popUpBtn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInMenuImg {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInImgHome {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 @media (max-width: 1366px) {
   .logo-img {
     width: 70%;
@@ -163,6 +223,10 @@ body {
       }
 
     .menu-img {
+  width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInMenuImg 1.2s;
+
         width: 100%;
     }
 
@@ -196,11 +260,15 @@ body {
       }
 
       .menu-img {
+  width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInMenuImg 1.2s;
+
         width: 90%;
       }
 
       .logo-img {
-        width: 40%;
+        width: 60%;
       }
       
       .img-all-menu {
@@ -216,6 +284,9 @@ body {
 
 
   .img-home {
+  margin-right: 7rem;
+  animation: fadeInImgHome 1.4s;
+
     padding-top: 2rem;
   }
 
@@ -232,6 +303,10 @@ body {
   }
 
   .menu-img {
+  width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInMenuImg 1.2s;
+
     width: 90%;
     margin: auto; 
     display: block;
@@ -242,7 +317,7 @@ body {
   }
 
   .logo-img {
-    width: 40%;
+    width: 60%;
   }
 
   .img-all-menu {
@@ -271,6 +346,9 @@ body {
   }
 
   .img-home {
+  margin-right: 7rem;
+  animation: fadeInImgHome 1.4s;
+
     margin: 0 auto;
     padding-top: 2rem;
   }
@@ -280,6 +358,10 @@ body {
   }
 
   .menu-img {
+  width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInMenuImg 1.2s;
+
     width: 60%;
   }
 
@@ -294,6 +376,9 @@ body {
 
 
   .img-home {
+  margin-right: 7rem;
+  animation: fadeInImgHome 1.4s;
+
     margin: 0 auto;
     padding-top: 2rem;
   }
@@ -312,6 +397,15 @@ body {
   }
 
   .btn-home button {
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  font: 800;
+  color: white;
+  background-color: rgb(220, 151, 0);
+  padding: 7px 15px;
+  transition: background 0.2s, transform 0.2s;
+  animation: popUpBtn 0.9s cubic-bezier(.23,1.12,.89,.92);
+
     font-size: 14px;
   }
 
@@ -328,6 +422,10 @@ body {
   }
 
   .menu-img {
+  width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInMenuImg 1.2s;
+
     width: 60%;
     display: block;
     margin: auto;
@@ -338,7 +436,7 @@ body {
   }
 
   .logo-img {
-    width: 60%;
+    width: 80%;
   }
 
   .maps {
@@ -387,6 +485,15 @@ body {
     }
 
     .btn-home button {
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  font: 800;
+  color: white;
+  background-color: rgb(220, 151, 0);
+  padding: 7px 15px;
+  transition: background 0.2s, transform 0.2s;
+  animation: popUpBtn 0.9s cubic-bezier(.23,1.12,.89,.92);
+
         font-size: 13px;
       }
 }
